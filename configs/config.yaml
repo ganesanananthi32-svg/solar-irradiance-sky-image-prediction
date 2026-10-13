@@ -1,0 +1,49 @@
+# Configuration for Solar Irradiance Prediction from Sky Images with Clear Sky Model
+
+experiment:
+  name: "solar_irradiance_clear_sky_benchmark"
+  seed: 42
+  device: "cuda" # fallback to cpu if not available
+
+station:
+  name: "Stanford_Solar_Station"
+  latitude: 37.4275      # degrees North
+  longitude: -122.1697   # degrees West
+  elevation: 32.0        # meters above sea level
+  timezone: "America/Los_Angeles"
+
+clear_sky_model:
+  type: "ineichen"       # options: ineichen, haurwitz, bird
+  default_linke_turbidity: 3.0
+  adaptive_calibration: true
+  min_solar_elevation: 10.0 # filter out low sun angles / night (< 10 deg)
+
+data:
+  image_size: 128        # resized dimensions (H, W)
+  sequence_length: 4     # number of consecutive historical sky frames (t-3, t-2, t-1, t)
+  forecast_horizon_min: 15 # prediction horizon in minutes ahead (nowcast: 0, short-term: 5, 10, 15)
+  batch_size: 32
+  num_workers: 2
+  train_split: 0.70
+  val_split: 0.15
+  test_split: 0.15
+
+vision_preprocessing:
+  fisheye_mask: true
+  circumsolar_radius_deg: 15.0 # sun-centered field of view crop (degrees)
+  rbr_cloud_threshold: 0.85     # Red-to-Blue ratio threshold for cloud detection
+
+model:
+  type: "circumsolar_sun_attention" # options: direct_regression, gao_liu_residual, circumsolar_sun_attention
+  backbone: "lightweight_cnn"       # options: lightweight_cnn, resnet18, vit
+  hidden_dim: 128
+  dropout: 0.1
+  use_auxiliary_features: true      # temperature, humidity, wind, zenith, azimuth
+
+training:
+  epochs: 25
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  loss_type: "physics_ramp_loss"    # options: mse, l1, physics_ramp_loss, quantile_pinball
+  ramp_loss_weight: 0.35            # weight lambda for ramp rate penalty
+  early_stopping_patience: 7

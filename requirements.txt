@@ -1,0 +1,10 @@
+# Project Dependencies for Solar Irradiance Prediction from Sky Images with Clear Sky Model
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+scipy>=1.10.0
+pvlib>=0.10.0
+pyyaml>=6.0
+pillow>=9.0.0

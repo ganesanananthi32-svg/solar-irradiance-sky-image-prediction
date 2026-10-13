@@ -1,0 +1,74 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🚀 Run All (Complete Pipeline)",
+      "type": "shell",
+      "command": "python",
+      "args": ["scripts/run_all.py"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Step 1: Download & Build Real Dataset",
+      "type": "shell",
+      "command": "python",
+      "args": ["scripts/step1_download_real_data.py"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Step 2: Visualize Sun Tracking & Polar Warping",
+      "type": "shell",
+      "command": "python",
+      "args": ["scripts/step2_visualize_real_sun_tracking.py"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Step 3: Train & Benchmark on Real Data",
+      "type": "shell",
+      "command": "python",
+      "args": ["scripts/step3_train_and_benchmark_real_data.py"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Synthetic Benchmark Suite",
+      "type": "shell",
+      "command": "python",
+      "args": ["scripts/run_synthetic_benchmark.py"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

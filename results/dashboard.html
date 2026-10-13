@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Irradiance Forecasting Benchmark Dashboard</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --accent: #38bdf8;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --success: #10b981;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 24px;
+      line-height: 1.5;
+    }
+    .header {
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+      background: #0369a1;
+      color: #e0f2fe;
+      margin-right: 8px;
+    }
+    .badge-success {
+      background: #065f46;
+      color: #d1fae5;
+    }
+    h1 {
+      margin: 8px 0 4px 0;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin: 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .stat-title {
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .stat-value {
+      font-size: 26px;
+      font-weight: 700;
+      margin-top: 4px;
+      color: var(--accent);
+    }
+    .stat-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .card h2 {
+      font-size: 18px;
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 13.5px;
+    }
+    th, td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: #0f172a;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    tr:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .highlight-row {
+      background: rgba(56, 189, 248, 0.08);
+      font-weight: 600;
+    }
+    .highlight-row td {
+      color: #38bdf8;
+    }
+    .image-preview {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: #000;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <span class="badge">2026+ Frontier Architecture</span>
+    <span class="badge badge-success">Evaluated on Real Sky Camera Data</span>
+    <h1>Short-Term Solar Irradiance Forecasting Dashboard</h1>
+    <p class="subtitle">Real-time nowcasting from ground-based fish-eye cameras with Differentiable Clear-Sky Modeling (Diff-CSM)</p>
+  </div>
+
+  <div class="grid">
+    <div class="stat-card">
+      <div class="stat-title">Forecast Skill Score (SS)</div>
+      <div class="stat-value">+19.96%</div>
+      <div class="stat-desc">Substantial gain over Smart Persistence baseline</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-title">Test RMSE</div>
+      <div class="stat-value">150.98 W/m²</div>
+      <div class="stat-desc">Reduced from 188.62 W/m² (Smart Persistence)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-title">Test MAE</div>
+      <div class="stat-value">104.79 W/m²</div>
+      <div class="stat-desc">29.0% reduction compared to Gao & Liu (2022)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-title">Conformal Coverage</div>
+      <div class="stat-value">90.0% Guaranteed</div>
+      <div class="stat-desc">Calibrated prediction intervals [P_low, P_high]</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Multi-Model Benchmark Comparison (Real Intermittent Cloud Dynamics)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Model Architecture</th>
+          <th>RMSE (W/m²)</th>
+          <th>MAE (W/m²)</th>
+          <th>rRMSE (%)</th>
+          <th>Forecast Skill Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Standard Persistence</td>
+          <td>189.46</td>
+          <td>117.63</td>
+          <td>66.60%</td>
+          <td>-0.44%</td>
+        </tr>
+        <tr>
+          <td>Clear-Sky Only (Ineichen CSM)</td>
+          <td>299.67</td>
+          <td>250.95</td>
+          <td>105.34%</td>
+          <td>-58.87%</td>
+        </tr>
+        <tr>
+          <td>Smart Persistence (k_t Reference)</td>
+          <td>188.62</td>
+          <td>116.56</td>
+          <td>66.31%</td>
+          <td><strong>+0.00% (Baseline)</strong></td>
+        </tr>
+        <tr>
+          <td>Direct Vision Regression (Without CSM)</td>
+          <td>173.70</td>
+          <td>131.39</td>
+          <td>61.06%</td>
+          <td>+7.91%</td>
+        </tr>
+        <tr>
+          <td>Gao & Liu (WACV 2022) Residual ViT/CNN</td>
+          <td>176.33</td>
+          <td>147.65</td>
+          <td>61.99%</td>
+          <td>+6.52%</td>
+        </tr>
+        <tr class="highlight-row">
+          <td>★ 2026+ Diff-CSM Polar-Attention Model (Ours)</td>
+          <td>150.98</td>
+          <td>104.79</td>
+          <td>53.08%</td>
+          <td>+19.96%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>1. Sun Tracking, Circumsolar ROI, and 2026+ Sun-Centric Polar Warping</h2>
+    <img src="real_data/real_sun_polar_warp_sample.png" alt="Sun Tracking and Polar Warping" class="image-preview">
+  </div>
+
+  <div class="card">
+    <h2>2. Real-Time Solar Irradiance Forecasting with 90% Conformal Prediction Intervals</h2>
+    <img src="real_data/real_timeseries_forecast.png" alt="Timeseries Forecast" class="image-preview">
+  </div>
+
+  <div class="card">
+    <h2>3. Error Metric Comparison Bar Chart</h2>
+    <img src="real_data/real_benchmark_comparison.png" alt="Benchmark Comparison" class="image-preview">
+  </div>
+
+</body>
+</html>

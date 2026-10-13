@@ -1,0 +1,7 @@
+{
+  "python.defaultInterpreterPath": "C:\\Python314\\python.exe",
+  "python.languageServer": "Pylance",
+  "python.terminal.executeInFileDir": true,
+  "files.autoSave": "afterDelay",
+  "terminal.integrated.defaultProfile.windows": "PowerShell"
+}

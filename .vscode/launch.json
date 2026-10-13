@@ -1,0 +1,53 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "🚀 RUN ALL: Complete Solar Forecasting Pipeline",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/run_all.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Step 1: Download & Build Real Sky Dataset",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/step1_download_real_data.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Step 2: Visualize Sun-Tracking & Polar Warping",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/step2_visualize_real_sun_tracking.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Step 3: Train & Benchmark on Real Data (Diff-CSM)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/step3_train_and_benchmark_real_data.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Run Synthetic Benchmark Suite",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/run_synthetic_benchmark.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "Persistence": {
+    "RMSE": 189.45632934570312,
+    "MAE": 117.62572479248047,
+    "MBE": 6.705417156219482,
+    "rRMSE_%": 66.60053253173828,
+    "Baseline_RMSE": 188.62451787136544,
+    "Skill_Score_%": -0.4409879922953275,
+    "ramp_precision": 1.0,
+    "ramp_recall": 0.0,
+    "ramp_f1": 0.0,
+    "total_ramps_observed": 289,
+    "total_ramps_predicted": 0
+  },
+  "Clear-Sky Only (Ineichen)": {
+    "RMSE": 299.6675720214844,
+    "MAE": 250.95123291015625,
+    "MBE": 232.98065185546875,
+    "rRMSE_%": 105.34364318847656,
+    "Baseline_RMSE": 188.62451787136544,
+    "Skill_Score_%": -58.86989422331934,
+    "ramp_precision": 0.3641114982578397,
+    "ramp_recall": 0.7231833910034602,
+    "ramp_f1": 0.48435689455388176,
+    "total_ramps_observed": 289,
+    "total_ramps_predicted": 574
+  },
+  "Smart Persistence (k_t)": {
+    "RMSE": 188.62451171875,
+    "MAE": 116.5550308227539,
+    "MBE": 2.773583173751831,
+    "rRMSE_%": 66.30812072753906,
+    "Baseline_RMSE": 188.62451787136544,
+    "Skill_Score_%": 3.2618322931554644e-06,
+    "ramp_precision": 0.0,
+    "ramp_recall": 0.0,
+    "ramp_f1": 0.0,
+    "total_ramps_observed": 289,
+    "total_ramps_predicted": 9
+  },
+  "Direct Vision Regression (No CSM)": {
+    "RMSE": 173.69798278808594,
+    "MAE": 131.39085388183594,
+    "MBE": -38.42350769042969,
+    "rRMSE_%": 61.060916900634766,
+    "Baseline_RMSE": 188.62451787136544,
+    "Skill_Score_%": 7.91335890568522,
+    "ramp_precision": 0.4117647058823529,
+    "ramp_recall": 0.3633217993079585,
+    "ramp_f1": 0.38602941176470584,
+    "total_ramps_observed": 289,
+    "total_ramps_predicted": 255
+  },
+  "Gao & Liu (WACV 2022) Residual": {
+    "RMSE": 176.33433532714844,
+    "MAE": 147.65379333496094,
+    "MBE": 84.9170150756836,
+    "rRMSE_%": 61.98768615722656,
+    "Baseline_RMSE": 188.62451787136544,
+    "Skill_Score_%": 6.515686657764408,
+    "ramp_precision": 0.366,
+    "ramp_recall": 0.6332179930795848,
+    "ramp_f1": 0.4638783269961977,
+    "total_ramps_observed": 289,
+    "total_ramps_predicted": 500
+  },
+  "2026+ Diff-CSM Model (Ours)": {
+    "RMSE": 150.98370361328125,
+    "MAE": 104.78816986083984,
+    "MBE": -4.278189182281494,
+    "rRMSE_%": 53.076053619384766,
+    "Baseline_RMSE": 188.62451787136544,
+    "Skill_Score_%": 19.955419731677594,
+    "ramp_precision": 0.6304347826086957,
+    "ramp_recall": 0.4013840830449827,
+    "ramp_f1": 0.49048625792811834,
+    "total_ramps_observed": 289,
+    "total_ramps_predicted": 184
+  }
+}
